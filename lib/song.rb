@@ -60,7 +60,7 @@ class Song
 
    def self.new_from_filename(file)
          fix_strings_from_file = file.split(/\.|,/)
-         fix_strings_from_file .pop
+         fix_strings_from_file.pop
          step_a = fix_strings_from_file .join
          step_b = a.split(" - ")
          step_c = b.select{|e| e != ""}
