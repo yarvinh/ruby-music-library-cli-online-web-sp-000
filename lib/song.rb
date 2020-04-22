@@ -1,7 +1,6 @@
 class Song
-    #  extend Concerns::Findable
      attr_accessor :name
-     attr_reader  :artist, :genre, :create_from_filename, :find_or_create_by_name
+     attr_reader  :artist, :genre#, :create_from_filename, :find_or_create_by_name
      @@all = []
 
     def initialize(name, artists = "none", genres = "none" )
