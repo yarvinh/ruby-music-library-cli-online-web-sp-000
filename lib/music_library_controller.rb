@@ -48,10 +48,10 @@ class MusicLibraryController
 
    def list_artists
      artists = []
-     counter = 1
+    #  counter = 1
      Artist.all.each_with_index{|a,index| artists << a.name}
      artists.sort.each{|a| puts "#{index + 1}. #{a}"
-       counter += 1
+      #  counter += 1
      }
    end
 
