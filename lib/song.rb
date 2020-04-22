@@ -62,8 +62,8 @@ class Song
          fix_strings_from_file = file.split(/\.|,/)
          fix_strings_from_file.pop
          step_a = fix_strings_from_file .join
-         step_b = a.split(" - ")
-         step_c = b.select{|e| e != ""}
+         step_b = step_a.split(" - ")
+         step_c = step_b.select{|e| e != ""}
          artist =  Artist.find_or_create_by_name(step_c[0])
          genre = Genre.find_or_create_by_name(step_c[2])
          Song.new(c[1],artist,genre)
