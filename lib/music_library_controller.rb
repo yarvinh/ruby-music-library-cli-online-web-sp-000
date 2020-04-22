@@ -94,7 +94,19 @@ class MusicLibraryController
    end
 
    def play_song
-
+    #  songs = []
+    #  counter = 1
+    #  @song_by_alphabetical_oder = []
+    #  Song.all.each{|s| songs << s.name}
+    #  songs.sort.each{|s|
+    #    song_by_alphabetical_oder = ""
+    #     Song.all.map {|song|
+    #       if song.name == s
+    #           song_by_alphabetical_oder = "#{counter}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
+    #           @song_by_alphabetical_oder << song_by_alphabetical_oder
+    #       end
+    #     }
+    
     puts "Which song number would you like to play?"
     user_input = gets
     songs = Song.all.map{|s| s.name}
