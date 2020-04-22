@@ -36,23 +36,21 @@ class MusicLibraryController
 
   end
    def list_songs
-     counter = 1
      songs =  Song.all.map{|s| s.name}
      songs.sort.each{|s|
-        Song.all.each {|song|
+        Song.all.each_with_index {|song,index|
           if song.name == s
-            puts "#{counter}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
+            puts "#{index + 1}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
           end
         }
-        counter += 1
      }
    end
 
    def list_artists
      artists = []
      counter = 1
-     Artist.all.each{|a| artists << a.name}
-     artists.sort.each{|a| puts "#{counter}. #{a}"
+     Artist.all.each_with_index{|a,index| artists << a.name}
+     artists.sort.each{|a| puts "#{index + 1}. #{a}"
        counter += 1
      }
    end
@@ -70,7 +68,7 @@ class MusicLibraryController
      puts "Please enter the name of an artist:"
      user_input = gets
      Artist.all.each{|a|
-      if  user_input == "#{a.name}"#{}"\n"
+      if  user_input == "#{a.name}"
          counter = 1
          song = a.songs.map{|s| "#{s.name} - #{s.genre.name}"}
             song.sort.each{|song|  puts "#{counter}. #{song}"
@@ -96,44 +94,8 @@ class MusicLibraryController
    end
 
    def play_song
-    #  songs = []
-    #  counter = 1
-    #  @song_by_alphabetical_oder = []
-    #  Song.all.each{|s| songs << s.name}
-    #  songs.sort.each{|s|
-    #    song_by_alphabetical_oder = ""
-    #     Song.all.map {|song|
-    #       if song.name == s
-    #           song_by_alphabetical_oder = "#{counter}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
-    #           @song_by_alphabetical_oder << song_by_alphabetical_oder
-    #       end
-    #     }
-    #     counter += 1
-    #  }
-    #   puts "Which song number would you like to play?"
-    #  user_input = gets
-    #  counter = 0
-    #  @song_by_alphabetical_oder.map{|s|
-    #    counter += 1
-    #    counter.to_s
-    #    if s[0] == user_input
-    #      list =  s.tr("#{counter}.","")
-    #      list_song = list.split(" - ")
-    #      list_song.pop
-    #      song = list_song
-    #                  puts "Playing #{song[1]} by#{song[0]}"
-    #     end
-    # }
-
-
-
-
-
-
-
     puts "Which song number would you like to play?"
     user_input = gets
-    # counter = 1
     songs = Song.all.map{|s| s.name}
     songs.sort.each_with_index{|s,index|
        Song.all.each{|song|
@@ -147,7 +109,6 @@ class MusicLibraryController
              end
          end
        }
-        # counter += 1
     }
    end
 end
