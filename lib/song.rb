@@ -63,9 +63,9 @@ class Song
          fix_string_from_file.pop
          step_2 = fix_string_from_file.join
          step_3 = step_2.split(" - ")
-         step_3.select{|e| e != ""}
-         artist =  Artist.find_or_create_by_name(step_3[0])
-         genre = Genre.find_or_create_by_name(step_3[2])
+         step_4 = step_3.select{|e| e != ""}
+         artist =  Artist.find_or_create_by_name(step_4[0])
+         genre = Genre.find_or_create_by_name(step_4[2])
          Song.new(c[1],artist,genre)
    end
 
