@@ -36,15 +36,14 @@ class MusicLibraryController
 
   end
    def list_songs
-    #  counter = 1
+    
      songs =  Song.all.map{|s| s.name}
-     songs.sort.each{|s|
-        Song.all.each_with_index {|song,index|
+     songs.sort.each_with_index{|s,index|
+        Song.all.each{|song|
           if song.name == s
             puts "#{index + 1}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
           end
         }
-
      }
    end
 
