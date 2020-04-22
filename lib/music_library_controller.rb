@@ -50,7 +50,7 @@ class MusicLibraryController
      artists = []
       counter = 1
      Artist.all.each{|a| artists << a.name}
-     artists.sort.each_with_index{|a| puts "#{counter}. #{a}"
+     artists.sort.each{|a| puts "#{counter}. #{a}"
         counter += 1
      }
    end
