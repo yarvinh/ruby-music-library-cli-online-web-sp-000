@@ -59,13 +59,13 @@ class Song
        end
 
    def self.new_from_filename(file)
-         steps_to_fix_string = file.split(/\.|,/)
-         steps_to_fix_string.pop
-         step_2 = steps_to_fix_string.join
-         step_3 = step_2.split(" - ")
-         step_4 = step_3.select{|e| e != ""}
-         artist =  Artist.find_or_create_by_name(step_4[0])
-         genre = Genre.find_or_create_by_name(step_4[2])
+         array = file.split(/\.|,/)
+         array.pop
+         a = array.join
+         b = a.split(" - ")
+         c = b.select{|e| e != ""}
+         artist =  Artist.find_or_create_by_name(c[0])
+         genre = Genre.find_or_create_by_name(c[2])
          Song.new(c[1],artist,genre)
    end
 
