@@ -135,7 +135,7 @@ class MusicLibraryController
     user_input = gets
     # counter = 1
     songs = Song.all.map{|s| s.name}
-    songs.sort.each_with_index{|s|
+    songs.sort.each_with_index{|s,index|
        Song.all.each{|song|
          if song.name == s
             song_by_alphabetical_oder = "#{index + 1}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
