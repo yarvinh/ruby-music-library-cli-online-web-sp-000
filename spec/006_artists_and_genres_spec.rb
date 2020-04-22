@@ -14,7 +14,7 @@ describe "Associations — Artist and Genre:" do
 
         expect(artist.genres).to include(genre)
         expect(artist.genres).to include(other_genre)
-        expect(artist.genres.size).to be(2)
+        expect(artist.genres.size).to be(2)#.size
       end
 
       it "does not return duplicate genres if the artist has more than one song of a particular genre (artist has many genres through songs)" do

@@ -57,7 +57,7 @@ describe "Concerns::Findable" do
       it "isn't hard-coded" do
         expect(Genre.find_or_create_by_name("shoegaze")).to be(genre_two)
       end
-
+# this one here
       it "invokes .find_by_name instead of re-coding the same functionality" do
         expect(Artist).to receive(:find_by_name)
         Artist.find_or_create_by_name("Slowdive")

@@ -18,7 +18,7 @@ describe "MusicImporter" do
 
   describe "#files" do
     it "loads all the MP3 files in the path directory" do
-      expect(music_importer.files.size).to eq(5)
+      expect(music_importer.files.size).to eq(5)#.size
     end
 
     it "normalizes the filename to just the MP3 filename with no path" do
