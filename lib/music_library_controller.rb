@@ -49,8 +49,8 @@ class MusicLibraryController
    def list_artists
      artists = []
     #  counter = 1
-     Artist.all.each_with_index{|a,index| artists << a.name}
-     artists.sort.each{|a| puts "#{index + 1}. #{a}"
+     Artist.all.each{|a| artists << a.name}
+     artists.sort.each_with_index{|a,index| puts "#{index + 1}. #{a}"
       #  counter += 1
      }
    end
