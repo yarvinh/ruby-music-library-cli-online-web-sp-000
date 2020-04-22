@@ -66,7 +66,7 @@ class Song
          step_c = step_b.select{|e| e != ""}
          artist =  Artist.find_or_create_by_name(step_c[0])
          genre = Genre.find_or_create_by_name(step_c[2])
-         Song.new(c[1],artist,genre)
+         Song.new(step_c[1],artist,genre)
    end
 
    def self.create_from_filename(file)
