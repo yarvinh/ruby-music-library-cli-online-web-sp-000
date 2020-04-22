@@ -77,11 +77,11 @@ class MusicLibraryController
      user_input = gets
      Genre.all.each{|g|
       if  user_input == "#{g.name}"
-         counter = 1
+        #  counter = 1
          songs = g.songs.map{|s|"#{s.name} - #{s.artist.name}"}
-         songs.sort.each{|s| song = s.split(" - ").reverse.join(" - ")
-         puts "#{counter}. #{song}"
-         counter += 1
+         songs.sort.each_with_index{|s,index| song = s.split(" - ").reverse.join(" - ")
+         puts "#{index + 1}. #{song}"
+        #  counter += 1
        }
       end
       }
