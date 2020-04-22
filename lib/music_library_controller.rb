@@ -55,10 +55,10 @@ class MusicLibraryController
 
    def list_genres
      genres = []
-     counter = 1
+    #  counter = 1
      Genre.all.each{|g| genres << g.name}
-     genres.sort.each{|g| puts "#{counter}. #{g}"
-       counter += 1
+     genres.sort.each_with_index{|g,index| puts "#{index + 1}. #{g}"
+      #  counter += 1
      }
    end
 
