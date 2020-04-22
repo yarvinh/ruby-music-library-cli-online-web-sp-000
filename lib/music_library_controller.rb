@@ -48,10 +48,10 @@ class MusicLibraryController
 
    def list_artists
      artists = []
-      counter = 1
+     counter = 1
      Artist.all.each{|a| artists << a.name}
      artists.sort.each{|a| puts "#{counter}. #{a}"
-        counter += 1
+       counter += 1
      }
    end
 
@@ -94,6 +94,7 @@ class MusicLibraryController
    end
 
    def play_song
+  
     puts "Which song number would you like to play?"
     user_input = gets
     songs = Song.all.map{|s| s.name}
