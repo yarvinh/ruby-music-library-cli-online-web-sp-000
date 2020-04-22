@@ -42,7 +42,7 @@ class Song
    def self.find_by_name(name)
         song = ""
         @@all.each{|s|
-         if s.name == name# || s.artist == name || s.genre == name
+         if s.name == name
            song = s
          end
        }
