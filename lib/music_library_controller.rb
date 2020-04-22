@@ -133,22 +133,21 @@ class MusicLibraryController
 
     puts "Which song number would you like to play?"
     user_input = gets
-    counter = 1
+    # counter = 1
     songs = Song.all.map{|s| s.name}
     songs.sort.each{|s|
-       Song.all.each {|song|
+       Song.all.each_with_index {|song,index|
          if song.name == s
-            song_by_alphabetical_oder = "#{counter}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
+            song_by_alphabetical_oder = "#{index + 1}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
             if song_by_alphabetical_oder[0] == user_input
               list =  song_by_alphabetical_oder.tr("#{song_by_alphabetical_oder[0]}.","")
               list_song = list.split(" - ")
               list_song.pop
-              # song = list_song
               puts "Playing #{list_song[1]} by#{list_song[0]}"
              end
          end
        }
-        counter += 1
+        # counter += 1
     }
    end
 end
