@@ -66,7 +66,7 @@ class MusicLibraryController
      Artist.all.each{|a|
       if  user_input == "#{a.name}"
          song = a.songs.map{|s| "#{s.name} - #{s.genre.name}"}
-            song.sort.each_with_index{|song,index|  puts "#{index + 1}. #{song}"
+         song.sort.each_with_index{|song,index|  puts "#{index + 1}. #{song}"
         }
       end
       }
