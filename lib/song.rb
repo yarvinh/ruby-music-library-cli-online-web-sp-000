@@ -12,7 +12,6 @@ class Song
         if genres != "none"
           self.genre=(genres)
         end
-        # save
         @songs = []
     end
 
