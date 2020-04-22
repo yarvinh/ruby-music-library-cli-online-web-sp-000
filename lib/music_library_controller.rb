@@ -106,7 +106,7 @@ class MusicLibraryController
     #           @song_by_alphabetical_oder << song_by_alphabetical_oder
     #       end
     #     }
-    
+
     puts "Which song number would you like to play?"
     user_input = gets
     songs = Song.all.map{|s| s.name}
