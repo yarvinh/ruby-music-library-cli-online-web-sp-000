@@ -1,7 +1,4 @@
 class Artist
-  # @@all = []
-
-  # extend Music::ClassMethods
     extend Concerns::Findable
     attr_accessor :name, :songs, :genres, :find_or_create_by_name
     attr_reader
