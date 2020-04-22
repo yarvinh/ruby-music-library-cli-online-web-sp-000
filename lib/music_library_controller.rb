@@ -138,7 +138,7 @@ class MusicLibraryController
     songs.sort.each{|s|
        Song.all.each_with_index {|song,index|
          if song.name == s
-            song_by_alphabetical_oder = "#{index}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
+            song_by_alphabetical_oder = "#{index + 1}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
             if song_by_alphabetical_oder[0] == user_input
               list =  song_by_alphabetical_oder.tr("#{song_by_alphabetical_oder[0]}.","")
               list_song = list.split(" - ")
