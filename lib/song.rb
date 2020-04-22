@@ -4,16 +4,15 @@ class Song
      @@all = []
 
     def initialize(name, artists = "none", genres = "none" )
-
         @name = name
+        save
         if artists != "none"
            self.artist=(artists)
         end
         if genres != "none"
           self.genre=(genres)
         end
-        save
-        # @@all << self
+        # save
         @songs = []
     end
 
